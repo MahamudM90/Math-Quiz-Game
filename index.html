@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=josefin+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <h1>Math Addition Quiz Game :)</h1>
+        <div class="centerdiv">
+            <div class="insertBox">
+                <div class="insertBox">
+                    <input type="text" id="v1">
+
+                </div>
+                <div class="box1">
+                    <p>+</p>
+                </div>
+                <div class="box1">
+                    <input type="text" id="v2">
+
+                </div>
+            </div>
+            <div class="middleBox">
+                <input type="text" id="answ">
+
+            </div>
+            <div class="sentBox">
+                <button onclick="jsGame()">Check Answer
+
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+    <script>
+        let n1 = Math.floor(Math.random() * 10 + 1);
+        let n2 = Math.floor(Math.random() * 10 + 1);
+
+        document.getElementById('v1').value = n1;
+        document.getElementById('v2').value = n2;
+        let ans = n1 + n2;
+        const jsGame = () => {
+            var usera = document.getElementById('answ').value;
+
+            if (usera == ans) {
+                alert('Well Done! Your Answe is correct.')
+
+            }
+            else {
+                alert("Correct answer is " + ans + ". Try Again. ");
+            }
+            document.getElementById('answ').value = "";
+            n1 = Math.floor(Math.random() * 10 + 1);
+            n2 = Math.floor(Math.random() * 10 + 1);
+
+            document.getElementById('v1').value = n1;
+            document.getElementById('v2').value = n2;
+            ans = n1 + n2;
+        }
+    </script>
+</body>
+
+</html>
